@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.toggletabs.swapsplits</id>
     <name>Toggle Tabs - Swap Splits</name>
-    <vendor email="yassin23raki@gmail.com">Yassine Erraqui</vendor>
+    <vendor email="yassin23raki@gmail.com" url="https://github.com/yaasin-raki2/toggle-tabs-swap-splits">Yassine Erraqui</vendor>
 
     <idea-version since-build="232"/>
 
