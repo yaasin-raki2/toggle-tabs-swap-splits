@@ -1,0 +1,58 @@
+<idea-plugin>
+    <id>com.toggletabs.swapsplits</id>
+    <name>Toggle Tabs - Swap Splits</name>
+    <vendor email="yassin23raki@gmail.com">Yassine Erraqui</vendor>
+
+    <idea-version since-build="232"/>
+
+    <version>1.0.0</version>
+
+    <description><![CDATA[
+<h2>Per-Split Tab History Navigation</h2>
+
+<p>Navigate your editor tabs smarter with <b>per-split history tracking</b>. Each split pane maintains its own independent navigation history, so you can jump back and forth within a single split without affecting your other splits.</p>
+
+<h3>Features</h3>
+<ul>
+    <li><b>XToggle</b> - Alternates between back and forward navigation. Press once to go back, press again to go forward. Perfect for quick A/B comparisons between files.</li>
+    <li><b>XBack</b> - Navigate backward in the current split's history</li>
+    <li><b>XForward</b> - Navigate forward in the current split's history</li>
+    <li><b>XSwap</b> - Swap the current tab between split panes. Moves your current file to the next split and brings the other file here.</li>
+</ul>
+
+<h3>Why Per-Split History?</h3>
+<p>The built-in IDE back/forward navigation is global - it jumps across all splits, which can be disorienting when working with multiple files side-by-side. This plugin tracks history <i>per split pane</i>, making navigation predictable and efficient.</p>
+
+<h3>Quick Start</h3>
+<ol>
+    <li>Open Settings → Keymap</li>
+    <li>Search for "XToggle", "XBack", "XForward", or "XSwap"</li>
+    <li>Assign your preferred keyboard shortcuts</li>
+</ol>
+
+<p><i>All actions start with 'X' to make them easy to find in the keymap search.</i></p>
+    ]]></description>
+
+    <change-notes><![CDATA[
+<h3>1.0.0</h3>
+<ul>
+    <li>Initial release</li>
+    <li>Per-split history tracking with XBack and XForward</li>
+    <li>Smart toggle navigation with XToggle</li>
+    <li>Split swap functionality with XSwap</li>
+</ul>
+    ]]></change-notes>
+
+    <actions>
+        <action id="ToggleTabs.XBack" class="history.XBack" text="XBack" description="Navigate backward in current split history"/>
+        <action id="ToggleTabs.XForward" class="history.XForward" text="XForward" description="Navigate forward in current split history"/>
+        <action id="ToggleTabs.XToggle" class="history.XToggle" text="XToggle" description="Toggle between back and forward navigation"/>
+        <action id="ToggleTabs.XSwap" class="history.XSwap" text="XSwap" description="Swap current tab with the next split pane"/>
+    </actions>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="history.XProjectActivity"/>
+    </extensions>
+
+    <depends>com.intellij.modules.lang</depends>
+</idea-plugin>
